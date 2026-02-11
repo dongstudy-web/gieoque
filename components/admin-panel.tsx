@@ -115,7 +115,7 @@ export function AdminPanel({ show, onClose, prizes, onUpdate }: AdminPanelProps)
         {/* Total & Error */}
         <div className="px-5 py-3" style={{ borderTop: "1px solid rgba(255, 215, 0, 0.2)" }}>
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm font-semibold" style={{ color: "#FFE4B5" }}>Tong:</span>
+            <span className="text-sm font-semibold" style={{ color: "#FFE4B5" }}>Tổng:</span>
             <span
               className="text-lg font-bold font-mono"
               style={{ color: Math.abs(totalPercentage - 100) > 0.01 ? "#FF4444" : "#00FF88" }}

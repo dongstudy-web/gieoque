@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback, useRef } from "react"
+import { useState, useCallback, useRef, useEffect } from "react"
 import { useShake } from "@/hooks/use-shake"
 import { Confetti } from "@/components/confetti"
 import { PrizeModal } from "@/components/prize-modal"
@@ -31,6 +31,8 @@ function drawPrize(prizes: PrizeConfig[]): PrizeConfig {
 export default function Page() {
   const [step, setStep] = useState<"shake" | "result">("shake")
   const [prizes, setPrizes] = useState<PrizeConfig[]>(DEFAULT_PRIZES)
+  const audioRef = useRef<HTMLAudioElement | null>(null)
+  const [isMusicOn, setIsMusicOn] = useState(false)
   const [showAdmin, setShowAdmin] = useState(false)
   const [showConfetti, setShowConfetti] = useState(false)
   const [showPrizeModal, setShowPrizeModal] = useState(false)
@@ -103,9 +105,44 @@ export default function Page() {
     setShowConfetti(false)
     setShowPrizeModal(false)
   }
+  useEffect(() => {
+  const audio = new Audio("/music.mp3")
+  audio.loop = true
+  audio.volume = 0.5
+
+  audioRef.current = audio
+
+  return () => {
+    audio.pause()
+  }
+}, [])
+const toggleMusic = () => {
+  if (!audioRef.current) return
+
+  if (isMusicOn) {
+    audioRef.current.pause()
+  } else {
+    audioRef.current.play().catch(() => {})
+  }
+
+  setIsMusicOn(!isMusicOn)
+}
+
 
   return (
     <main className="relative min-h-dvh overflow-hidden">
+      <button
+  onClick={toggleMusic}
+  className="fixed top-4 left-4 z-40 px-4 py-2 rounded-lg text-sm font-semibold transition active:scale-95"
+  style={{
+    background: "rgba(0,0,0,0.5)",
+    color: "#FFD700",
+    backdropFilter: "blur(6px)",
+  }}
+>
+  {isMusicOn ? "🔊 Tắt nhạc" : "🔈 Bật nhạc"}
+</button>
+
       {/* Background */}
       <div
         className="fixed inset-0 bg-cover bg-center bg-no-repeat"
@@ -161,13 +198,13 @@ export default function Page() {
               textShadow: "0 2px 20px rgba(255, 215, 0, 0.5)",
             }}
           >
-            {"Lac Li Xi Tet 2026"}
+            {"Lắc để nhận lì xì tết 2026"}
           </h1>
           <p
             className="text-sm mt-1 font-medium"
             style={{ color: "#FFE4B5" }}
           >
-            {"Lac dien thoai de nhan li xi may man"}
+            {"Lắc để nhận những phần quà may mắn"}
           </p>
         </div>
 
@@ -222,7 +259,7 @@ export default function Page() {
           <div className="flex flex-col items-center gap-6 animate-fade-in">
             <div className="text-center">
               <p className="text-sm mb-2" style={{ color: "#FFE4B5" }}>
-                {"Ban da nhan duoc li xi"}
+                {"Bạn đã nhận được lì xì"}
               </p>
               <div
                 className="text-5xl font-extrabold mb-2"
@@ -250,7 +287,7 @@ export default function Page() {
                 boxShadow: "0 4px 20px rgba(255, 215, 0, 0.4)",
               }}
             >
-              {"Lac Lai Lan Nua"}
+              {"Lắc lại nào"}
             </button>
           </div>
         )}
