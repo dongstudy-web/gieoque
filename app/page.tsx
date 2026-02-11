@@ -9,10 +9,10 @@ import { LuckyEnvelope } from "@/components/lucky-envelope"
 
 const DEFAULT_PRIZES: PrizeConfig[] = [
   { label: "10,000", value: 10000, percentage: 35 },
-  { label: "20,000", value: 20000, percentage: 30 },
-  { label: "50,000", value: 50000, percentage: 20 },
-  { label: "100,000", value: 100000, percentage: 10 },
-  { label: "200,000", value: 200000, percentage: 4 },
+  { label: "20,000", value: 20000, percentage: 42 },
+  { label: "50,000", value: 50000, percentage: 15 },
+  { label: "100,000", value: 100000, percentage: 5 },
+  { label: "200,000", value: 200000, percentage: 2 },
   { label: "500,000", value: 500000, percentage: 1 },
 ]
 

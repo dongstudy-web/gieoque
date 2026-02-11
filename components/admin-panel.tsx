@@ -111,7 +111,7 @@ export function AdminPanel({ show, onClose, prizes, onUpdate }: AdminPanelProps)
             </div>
           ))}
         </div>
-
+z
         {/* Total & Error */}
         <div className="px-5 py-3" style={{ borderTop: "1px solid rgba(255, 215, 0, 0.2)" }}>
           <div className="flex items-center justify-between mb-2">
