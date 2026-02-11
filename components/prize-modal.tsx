@@ -131,7 +131,7 @@ export function PrizeModal({ show, amount, onClose }: PrizeModalProps) {
                 boxShadow: "0 4px 15px rgba(255, 215, 0, 0.3)",
               }}
             >
-              {"Nhan Li Xi"}
+              {"Nhận Lì Xì"}
             </button>
           </div>
 
