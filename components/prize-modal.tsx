@@ -24,14 +24,14 @@ export function PrizeModal({ show, amount, onClose }: PrizeModalProps) {
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
       role="dialog"
       aria-modal="true"
-      aria-label="Thong bao trung thuong"
+      aria-label="Thông báo trúng thưởng"
     >
       {/* Backdrop */}
       <button
         type="button"
         className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-default"
         onClick={onClose}
-        aria-label="Dong"
+        aria-label="Đóng"
       />
 
       {/* Modal content */}
@@ -84,10 +84,10 @@ export function PrizeModal({ show, amount, onClose }: PrizeModalProps) {
               className="text-lg font-bold mb-1"
               style={{ color: "#FFD700" }}
             >
-              {"Chuc Mung Nam Moi!"}
+              {"Chúc mừng năm mới!"}
             </h2>
             <p className="text-sm mb-4" style={{ color: "#FFE4B5" }}>
-              {"Ban da nhan duoc li xi"}
+              {"Bạn đã nhận được lì xì"}
             </p>
 
             {/* Prize amount */}
@@ -117,7 +117,7 @@ export function PrizeModal({ show, amount, onClose }: PrizeModalProps) {
 
             {/* Wishes */}
             <p className="text-sm italic mb-6" style={{ color: "#FFB6C1" }}>
-              {"Chuc ban nam moi an khang thinh vuong, van su nhu y!"}
+              {"Chúc bạn năm mới an khang thịnh vượng , sức khoẻ dồi dào"}
             </p>
 
             {/* Close button */}

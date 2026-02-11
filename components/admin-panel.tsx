@@ -33,7 +33,7 @@ export function AdminPanel({ show, onClose, prizes, onUpdate }: AdminPanelProps)
 
     const total = updated.reduce((sum, p) => sum + p.percentage, 0)
     if (Math.abs(total - 100) > 0.01) {
-      setError(`Tong ti le: ${total.toFixed(1)}% (can bang 100%)`)
+      setError(`Tổng tỉ lệ : ${total.toFixed(1)}% (cần bằng 100%)`)
     } else {
       setError("")
     }
@@ -41,7 +41,7 @@ export function AdminPanel({ show, onClose, prizes, onUpdate }: AdminPanelProps)
 
   const handleSave = () => {
     if (Math.abs(totalPercentage - 100) > 0.01) {
-      setError("Tong ti le phai bang 100%!")
+      setError("Tổng tỉ lệ phải bằng 100%!")
       return
     }
     onUpdate(localPrizes)
@@ -51,13 +51,13 @@ export function AdminPanel({ show, onClose, prizes, onUpdate }: AdminPanelProps)
   if (!show) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-end justify-center" role="dialog" aria-modal="true" aria-label="Cai dat ti le">
+    <div className="fixed inset-0 z-50 flex items-end justify-center" role="dialog" aria-modal="true" aria-label="Cài đặt tỉ lệ">
       <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" onClick={onClose} />
       <div className="relative w-full max-w-md rounded-t-2xl overflow-hidden animate-slide-up" style={{ background: "linear-gradient(180deg, #1a0a0a 0%, #2d0a0a 100%)" }}>
         {/* Header */}
         <div className="flex items-center justify-between px-5 py-4" style={{ borderBottom: "1px solid rgba(255, 215, 0, 0.2)" }}>
           <h3 className="font-bold text-base" style={{ color: "#FFD700" }}>
-            Cai Dat Ti Le Trung Thuong
+            Cài đặt tỉ lệ trúng thưởng
           </h3>
           <button
             onClick={onClose}
@@ -88,7 +88,7 @@ export function AdminPanel({ show, onClose, prizes, onUpdate }: AdminPanelProps)
                   style={{
                     background: `linear-gradient(to right, #FFD700 0%, #FFD700 ${prize.percentage}%, #3a1a1a ${prize.percentage}%, #3a1a1a 100%)`,
                   }}
-                  aria-label={`Ti le ${prize.label}`}
+                  aria-label={`Tỉ lệ ${prize.label}`}
                 />
               </div>
               <div className="flex-shrink-0 w-16 text-right">
@@ -135,7 +135,7 @@ export function AdminPanel({ show, onClose, prizes, onUpdate }: AdminPanelProps)
               color: Math.abs(totalPercentage - 100) > 0.01 ? "#999" : "#8B0000",
             }}
           >
-            Luu Thay Doi
+            Lưu thay đổi
           </button>
         </div>
       </div>

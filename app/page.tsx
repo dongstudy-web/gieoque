@@ -203,15 +203,15 @@ export default function Page() {
                 className="text-base font-semibold animate-pulse"
                 style={{ color: "#FFD700" }}
               >
-                {shakeCount === 0 && "Lac dien thoai de mo li xi!"}
-                {shakeCount === 1 && "Tiep tuc lac!"}
-                {shakeCount === 2 && "Sap ra roi, lac manh len!"}
+                {shakeCount === 0 && "Lắc điện thoại để mở lì xì"}
+                {shakeCount === 1 && "Tiếp tục lắc nào!"}
+                {shakeCount === 2 && "Sắp ra rồi, lắc mạnh lên!"}
               </p>
               <p
                 className="text-xs"
                 style={{ color: "#FFE4B5", opacity: 0.7 }}
               >
-                {"Hoac nhan vao bao li xi"}
+                {"hoặc nhấn vào bao lì xì"}
               </p>
             </div>
           </div>

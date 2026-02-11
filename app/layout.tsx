@@ -11,8 +11,8 @@ const beVietnam = Be_Vietnam_Pro({
 })
 
 export const metadata: Metadata = {
-  title: "Lac Li Xi Tet 2026",
-  description: "Lac dien thoai de nhan li xi may man dip Tet Binh Ngo 2026! Nhap tuoi va lac dien thoai de nhan li xi voi cac menh gia 10k - 500k.",
+  title: "Lắc thật xung nhận quà khủng 2026",
+  description: "lắc điện thoại để nhận lì xì may mắn xuân bính ngọ 2026! lắc điện thoại để nhận nhiều phần quà hấp dẫn",
 }
 
 export const viewport: Viewport = {

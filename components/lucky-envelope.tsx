@@ -10,7 +10,7 @@ export function LuckyEnvelope({ isShaking, onClick }: LuckyEnvelopeProps) {
     <button
       onClick={onClick}
       className={`relative w-52 h-64 mx-auto transition-transform ${isShaking ? "animate-shake" : "animate-float"}`}
-      aria-label="Bao li xi - Lac dien thoai de mo"
+      aria-label="Bao lì xì - Lắc điện thoại để mở"
       type="button"
     >
       {/* Main envelope body */}
